@@ -1,0 +1,436 @@
+/* Alertas */
+.lucen-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 11px;
+  border-radius: 4px;
+  background-color: #f3f2f1;
+  margin-bottom: 6px;
+  border: 1px solid #201f1e;
+}
+
+.lucen-alert i {
+  font-size: 1.1rem;
+}
+
+.lucen-alert-success {
+  background-color: #ebfcf4;
+  color: #00cc6a;
+  border: 1px solid #00cc6a;
+}
+
+.lucen-alert-danger {
+  background-color: #fae5e7;
+  color: #e81123;
+  border: 1px solid #e81123;
+}
+
+.lucen-alert-warning {
+  background-color: #fff9e9;
+  color: #ffb900;
+  border: 1px solid #ffb900;
+}
+
+/* Toasts */
+.lucen-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 11px;
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 4px;
+  box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 1200;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.lucen-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.lucen-toast i {
+  font-size: 1.2rem;
+}
+.lucen-toast-success {
+  background-color: rgba(235, 252, 244, 0.82);
+  color: #00cc6a;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.lucen-toast-error {
+  background-color: rgba(250, 229, 231, 0.82);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: #e81123;
+}
+
+/* Tooltips */
+.lucen-tooltip {
+  position: absolute;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 1070;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.lucen-tooltip.show {
+  opacity: 1;
+  visibility: visible;
+}
+.lucen-tooltip::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+}
+[data-lucen-placement=top] .lucen-tooltip::after {
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: rgba(0, 0, 0, 0.9);
+}
+[data-lucen-placement=bottom] .lucen-tooltip::after {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+}
+[data-lucen-placement=left] .lucen-tooltip::after {
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left-color: rgba(0, 0, 0, 0.9);
+}
+[data-lucen-placement=right] .lucen-tooltip::after {
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-color: rgba(0, 0, 0, 0.9);
+}
+
+.lucen-btn {
+  gap: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 11px;
+  background-color: transparent;
+  color: #323130;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+  text-decoration: none;
+}
+.lucen-btn span {
+  font-size: 15px;
+}
+.lucen-btn:hover {
+  background-color: #e6e6e6;
+  color: #323130;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.lucen-btn:active {
+  background-color: #e6e6e6;
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lucen-btn-primary {
+  background-color: #0163bf !important;
+  color: #ffffff !important;
+}
+.lucen-btn-primary:hover {
+  background-color: #4b9eec !important;
+  color: #ffffff !important;
+}
+
+.lucen-btn-outline {
+  background-color: transparent;
+  color: var(--dark);
+  border: 1px solid #e6e5e5;
+}
+.lucen-btn-outline:hover {
+  background-color: #e6e5e5;
+}
+
+.lucen-btn-success {
+  background-color: #00cc6a;
+  color: #ffffff;
+}
+
+.lucen-btn-success:hover, .lucen-btn-outline-success:hover {
+  background-color: #ebfcf4;
+  color: #00cc6a;
+}
+
+.lucen-btn-outline-success {
+  background-color: #ffffff;
+  color: #00cc6a;
+  border: 1px solid #00cc6a;
+}
+
+.lucen-btn-danger {
+  background-color: #e81123;
+  color: #ffffff;
+}
+
+.lucen-btn-danger:hover, .lucen-btn-outline-danger:hover {
+  background-color: #fae5e7;
+  color: #e81123;
+}
+
+.lucen-btn-outline-danger {
+  background-color: #ffffff;
+  color: #e81123;
+  border: 1px solid #e81123;
+}
+
+.lucen-btn-warning {
+  background-color: #ffb900;
+  color: #ffffff;
+}
+
+.lucen-btn-warning:hover, .lucen-btn-outline-warning:hover {
+  background-color: #fff9e9;
+  color: #ffb900;
+}
+
+.lucen-btn-outline-warning {
+  background-color: #ffffff;
+  color: #ffb900;
+  border: 1px solid #ffb900;
+}
+
+.lucen-btn-info {
+  background-color: #b146c2;
+  color: #ffffff;
+}
+
+.lucen-btn-info:hover, .lucen-btn-outline-info:hover {
+  background-color: #e2f9fa;
+  color: #b146c2;
+}
+
+.lucen-btn-outline-info {
+  background-color: #ffffff;
+  color: #b146c2;
+  border: 1px solid #b146c2;
+}
+
+.lucen-btn-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #605e5c;
+}
+.lucen-btn-icon:hover {
+  background-color: #f3f2f1;
+  color: #323130;
+}
+.lucen-btn-icon:active {
+  background-color: #e6e6e6;
+}
+.lucen-btn-icon.noback:hover {
+  background-color: #e6e6e6;
+  box-shadow: none;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  filter: contrast(0.6) !important;
+  background-color: #f3f2f1;
+  color: #a19f9d;
+}
+.disabled:hover {
+  color: #ffffff;
+}
+
+.lucen-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  user-select: none;
+}
+.lucen-checkbox input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  border: 1.5px solid #e1e1e1;
+}
+.custom-box::after {
+  content: "";
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: scale(0) rotate(45deg);
+  transition: transform 0.2s ease;
+  transform-origin: center;
+  top: 3px;
+  left: 7px;
+  position: absolute;
+}
+
+.lucen-checkbox input:checked + .custom-box {
+  background-color: #0163bf;
+  transform: scale(1.1);
+}
+.lucen-checkbox input:checked + .custom-box::after {
+  transform: scale(1) rotate(45deg);
+}
+.lucen-checkbox input:disabled + .custom-box {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.lucen-checkbox input:disabled + .custom-box::after {
+  border-color: white;
+  opacity: 0.5;
+}
+
+.lucen-checkbox-touch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+.lucen-checkbox-touch input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: #f3f2f1;
+  border: 2px solid #0163bf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  z-index: 1;
+}
+
+.checkmark-icon {
+  color: #ffffff;
+  width: 26px;
+  height: 26;
+  stroke-dasharray: 26;
+  stroke-dashoffset: 16;
+  opacity: 0;
+  transition: stroke-dashoffset 0.3s ease, opacity 0.2s ease;
+}
+
+.lucen-checkbox-touch input:checked ~ .checkmark {
+  background-color: #4b9eec;
+  border-color: #ffffff;
+}
+.lucen-checkbox-touch input:checked ~ .checkmark .checkmark-icon {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+.lucen-checkbox-touch input:disabled ~ .checkmark {
+  background-color: #ccc;
+  cursor: not-allowed;
+  border: 2px solid #ffffff;
+}
+.lucen-checkbox-touch input:disabled ~ .checkmark .checkmark-icon {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+
+.lucen-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.lucen-switch input {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  appearance: none;
+  background-color: #f3f2f1;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid #a19f9d;
+}
+.lucen-switch input:checked {
+  background-color: #0163bf;
+  border: none;
+}
+.lucen-switch input::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #a19f9d;
+  top: 2px;
+  left: 2px;
+  transition: all 0.2s ease;
+}
+.lucen-switch input:checked::before {
+  left: 22px;
+  background-color: #ffffff;
+  top: 3px;
+}
+
+.lucen-switch-variant {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.lucen-switch-variant .switch-label {
+  order: 1;
+}
+.lucen-switch-variant .lucen-switch {
+  order: 2;
+}
+
+/*# sourceMappingURL=lucen-ui.css.map */

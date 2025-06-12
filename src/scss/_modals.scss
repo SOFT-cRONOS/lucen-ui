@@ -1,0 +1,106 @@
+@use 'variables' as *;
+
+.lucen-modal {
+    position: fixed!important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1051;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}  
+
+/* Modal visible */
+.lucen-modal.show {
+    opacity: 1!important;
+    visibility: visible!important;
+}
+
+
+/* Diálogo del modal */
+.lucen-modal-dialog {
+    background-color: var(--lucen-background-primary);
+    border-radius: var(--lucen-border-radius);
+    box-shadow: var(--lucen-shadow-lg);
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+/* Diálogo del modal cuando está visible */
+.lucen-modal.show .lucen-modal-dialog {
+    transform: translateY(0);
+}
+
+/* Tamaño pequeño para modales de confirmación */
+.lucen-modal-sm {
+    max-width: 400px;
+}
+
+/* Tamaño grande para modales con más contenido */
+.lucen-modal-lg {
+    max-width: 800px;
+}
+
+
+.lucen-modal-header {
+    padding: 20px 30px 0 30px;
+    flex-direction: column;  
+    padding: var(--lucen-spacing-lg);
+    border-bottom: 1px solid var(--lucen-border-color);
+    display: flex;
+    align-items: start;
+    text-align: start;
+    justify-content: space-between;
+}
+
+.lucen-modal-header h1 {
+    margin: 0;
+    background-color: transparent;
+    font-size: 1.5em;
+}
+
+.lucen-modal-message {
+    font-size: 1em;
+    line-break: auto;
+    max-height: 24vh;
+    overflow-y: auto;
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.lucen-modal-footer {
+    padding: var(--lucen-spacing-lg);
+    border-top: 1px solid var(--lucen-border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--lucen-spacing-sm);
+    background-color: var(--lucen-background-secondary);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .lucen-modal-dialog {
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+    .lucen-modal-footer {
+        flex-direction: column;
+    }
+    
+    .lucen-modal-footer .lucen-btn {
+        width: 100%;
+    }
+}

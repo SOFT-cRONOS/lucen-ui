@@ -1,0 +1,59 @@
+@use 'variables' as *;
+
+// Switches
+.lucen-switch {
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+  cursor: pointer;
+
+  input {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    background-color: $lucen-background-secondary;
+    border-radius: 10px;
+    transition: $lucen-transition;
+    cursor: pointer;
+    border: 1px solid $lucen-text-tertiary;
+
+    &:checked {
+      background-color: $lucen-primary;
+      border: none;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: $lucen-text-tertiary;
+      top: 2px;
+      left: 2px;
+      transition: $lucen-transition;
+    }
+
+    &:checked::before {
+      left: 22px;
+      background-color: $lucen-background-primary;
+      top: 3px;
+    }
+  }
+}
+
+// Variante de switch
+.lucen-switch-variant {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .switch-label {
+    order: 1;
+  }
+
+  .lucen-switch {
+    order: 2;
+  }
+}

@@ -78,6 +78,10 @@ Desde el visual studio
 cd lucen-ui
 npm init -y
 ```
+y usar el siguiente comando para que al guardar se actualice el .css
+```
+sass --watch src/scss/lucen-ui.scss:dist/lucen-ui.css
+```
 
 `Nota: Si hace falta instalar nodejs npm luego sudo npm install -g sass`
 # License

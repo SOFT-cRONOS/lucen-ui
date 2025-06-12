@@ -1,0 +1,57 @@
+// Colores principales
+$lucen-primary: #0163bf;
+$lucen-primary-light: #4b9eec;
+$lucen-primary-dark: #03467a;
+$lucen-success: #00cc6a;
+$lucen-success-light: #ebfcf4;
+$lucen-success-light-rgb: 235, 252, 244;
+$lucen-danger: #e81123;
+$lucen-danger-light: #fae5e7;
+$lucen-danger-light-rgb: 250, 229, 231;
+$lucen-warning: #ffb900;
+$lucen-warning-light: #fff9e9;
+$lucen-warning-light-rgb: 255, 249, 233;
+$lucen-info: #b146c2;
+$lucen-info-light: #e2f9fa;
+$lucen-info-light-rgb: 226, 249, 250;
+$lucen-primary-light-rgb: 75, 158, 236;
+
+// Colores de texto
+$lucen-text-primary: #323130;
+$lucen-text-secondary: #605e5c;
+$lucen-text-tertiary: #a19f9d;
+$lucen-text-white: #ffffff;
+
+// Colores de fondo
+$lucen-background-primary: #ffffff;
+$lucen-background-primary-rgb: 255,255,255;
+$lucen-background-secondary: #f3f2f1;
+$lucen-background-tertiary: #e6e6e6;
+$lucen-background-quaternary: #e1e1e1;
+$lucen-background-dark: #201f1e;
+
+// Bordes
+$lucen-border-color: #e6e5e5;
+$lucen-border-radius: 4px;
+$lucen-border-radius-lg: 8px;
+
+// Sombras
+$lucen-shadow-sm: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+$lucen-shadow-md: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+$lucen-shadow-lg: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+
+// Transiciones
+$lucen-transition: all 0.2s ease;
+
+// Espaciado
+$lucen-spacing-xs: 3px;
+$lucen-spacing-sm: 6px;
+$lucen-spacing-md: 11px;
+$lucen-spacing-lg: 24px;
+$lucen-spacing-xl: 32px;
+$lucen-spacing-xxl: 52px;
+
+// Box shadows
+$lucen-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+$lucen-box-shadow-bg: 0 10px 50px rgba(0, 0, 0, 0.4) !important;
+$lucen-box-shadow-md: 0 2px 15px rgba(0, 0, 0, 0.1) !important;

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Complemento para Bootstrap 5</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="css/lucen-ui.css">
+    
+    <style>
+
+    </style>
+
+</head>
+<body class="lucen-body">
+      
+
+<div class="lucen-container col flex-centered">
+        <!-- Sidebar -->
+        <aside class="lucen-sidebar " id="sidebar">
+            <div class="lucen-sidebar-header">
+                <button class="lucen-btn lucen-btn-icon" id="sidebarCollapse">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h3>Menú</h3>
+            </div>
+            
+            <ul class="lucen-nav">
+                <li class="lucen-nav-item">
+                    <a href="dash.html" class="lucen-nav-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <div class="lucen-sidebar-cat flex-centered">
+                    <h4>Interface</h4>
+                    <div class="lucen-separator"></div>
+                </div>
+                <li class="lucen-nav-item">
+                    <a href="navigation.html" class="lucen-nav-link">
+                        <i class="bi bi-people"></i>
+                        <span>Navigation</span>
+                    </a>
+                </li>
+                <li class="lucen-nav-item">
+                    <a href="#componentssubmenu" data-bs-toggle="collapse" class="lucen-nav-link">
+                        <span>Componentes</span>
+                        <i class="bi bi-chevron-down lucen-nav-arrow"></i>
+                    </a>
+                    <ul class="lucen-nav-submenu collapse" id="componentssubmenu">
+                        <li><a href="acordion.html" class="lucen-nav-link"><i class="bi bi-list-nested"></i> <span>Acordion</span></a></li>
+                        <li><a href="alerts.html" class="lucen-nav-link"><i class="bi bi-exclamation-triangle"></i> <span>Alertas</span></a></li>
+                        <li><a href="buttons.html" class="lucen-nav-link active"><i class="bi bi-toggle-on"></i> <span>Botones</span></a></li>
+                        <li><a href="checkbox.html" class="lucen-nav-link"><i class="bi bi-check-square"></i> <span>CheckBox</span></a></li>
+                        <li><a href="commandbar.html" class="lucen-nav-link"><i class="bi bi-menu-button"></i> <span>CommandBar</span></a></li>
+                        <li><a href="dialog.html" class="lucen-nav-link"><i class="bi bi-chat-left-text"></i> <span>Dialog</span></a></li>
+                        <li><a href="input.html" class="lucen-nav-link"><i class="bi bi-input-cursor-text"></i> <span>Input</span></a></li>
+                    </ul>
+                </li>
+                <li class="lucen-nav-item">
+                    <a href="#utilitiessubmenu" data-bs-toggle="collapse" class="lucen-nav-link">
+                        <span>Utilities</span>
+                        <i class="bi bi-chevron-down lucen-nav-arrow"></i>
+                    </a>
+                    <ul class="lucen-nav-submenu collapse" id="utilitiessubmenu">
+                        <li><a href="appearance.html" class="lucen-nav-link"><i class="bi bi-palette"></i> <span>Appearance</span></a></li>
+                        <li><a href="classes.html" class="lucen-nav-link"><i class="bi bi-tags"></i> <span>Classes</span></a></li>
+                        <li><a href="colors.html" class="lucen-nav-link"><i class="bi bi-droplet"></i> <span>Colors</span></a></li>
+                        <li><a href="icons.html" class="lucen-nav-link"><i class="bi bi-emoji-sunglasses"></i> <span>Icons</span></a></li>
+                    </ul>
+                </li>
+                <div class="lucen-sidebar-cat flex-centered">
+                    <h4>Web Elements</h4>
+                    <div class="lucen-separator"></div>
+                </div>
+                <li class="lucen-nav-item">
+                    <a href="hero.html" class="lucen-nav-link">
+                        <i class="bi bi-people"></i>
+                        <span>Hero</span>
+                    </a>
+                </li>
+                <li class="lucen-nav-item">
+                    <a href="contactforms.html" class="lucen-nav-link">
+                        <i class="bi bi-file-earmark-text"></i>
+                        <span>Contact Forms</span>
+                    </a>
+                </li>
+                <li class="lucen-nav-item">
+                    <a href="footer.html" class="lucen-nav-link">
+                        <i class="bi bi-file-earmark-text"></i>
+                        <span>Footer</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Barra de búsqueda flotante -->
+        <nav class="lucen-navbar transparent">
+            <div class="lucen-navbar-left">
+              <!-- Espacio reservado si querés poner un logo -->
+            </div>
+            <div class="lucen-navbar-center">
+              <div class="lucen-navbar-search">
+                <i class="bi bi-search"></i>
+                <input class="lucen-input" type="text" placeholder="Buscar...">
+              </div>
+            </div>
+            <div class="lucen-navbar-right">
+              <div class="lucen-user-dropdown">
+                <button class="lucen-btn lucen-btn-icon" id="userDropdownToggle">
+                  <i class="bi bi-person-circle"></i>
+                  <span class="lucen-user-name">Nico</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="lucen-dropdown-menu" id="userDropdownMenu">
+                  <a href="#">Perfil</a>
+                  <a href="#">Configuración</a>
+                  <a href="#">Cerrar sesión</a>
+                </div>
+              </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="lucen-main st-app-main">
+            
+            <!-- Sección de Botones -->
+            <section class="">
+                <h1 class="component-title">Hero Banners</h1>
+                <!-- Hero 1 -->
+                    <div class="col-md-6">
+                        <div class="container mt-4">
+                            <div id="heroCarousel" class="carousel slide acrylic" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="hero-slide d-flex align-items-center" style="background-image: url('assets/img/nextcloud.webp')">
+                                            <div class="container">
+                                                <div class="row align-items-center">
+                                                    <!-- Columna para el texto (derecha) -->
+                                                    <div class="col order-md-2 pe-1" data-aos="fade-left">
+                                                        <div class="text-center text-white p-4 p-md-5">
+                                                            <h2>NUBE PERSONAL</h2>
+                                                            <p class="lead">Ingresa a tus archivos privados y archivos compartidos con tu oficina</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="carousel-item">
+                                        <div class="hero-slide" style="background-image: url('https://source.unsplash.com/random/1920x1080/?email');">
+                                            <div class="container">
+                                                <div class="hero-content">
+                                                    <h2 data-aos="fade-right">CORREO ELECTRÓNICO</h2>
+                                                    <p class="lead" data-aos="fade-right" data-aos-delay="100">Hace uso del sistema de correo electrónico local del establecimiento</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="carousel-item">
+                                        <div class="hero-slide d-flex align-items-center" style="background-image: url('assets/img/blur_one.jpg'); min-height: 500px;">
+                                            <div class="container ms-5 me-5">
+                                                <div class="row align-items-center">
+                                                    <!-- Columna para el texto (derecha) -->
+                                                    <div class="col-md-6 order-md-2 pe-1" data-aos="fade-left">
+                                                        <div class="text-start text-white p-4 p-md-5">
+                                                            <h2>ROCKET CHAT</h2>
+                                                            <p class="lead">Chatea en vivo con el resto del personal entre salas de las diferentes oficinas o con el resto de la escuela</p>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- Columna para la imagen PNG (izquierda) -->
+                                                    <div class="col-md-6 order-md-1" data-aos="fade-right">
+                                                        <div class="d-flex justify-content-center">
+                                                            <img src="assets/img/rocketchat_demo.png" alt="RocketChat Demo" class="img-fluid" style="max-height: 300px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Boton default -->
+                    <div class="col-md-6">
+                        <h3>Default</h3>
+                        <button class="lucen-btn">
+                            <span>Default Button</span>
+                        </button>
+                        <button class="lucen-btn">
+                            <i class="bi bi-star"></i>
+                            <span>Default Button</span>
+                        </button>
+                        <button class="lucen-btn disabled" >
+                            <span>Default Button</span>
+                        </button>
+                            <!-- Codigo -->
+                            <pre class="lucen-code-block">
+                                <code data-code='
+                                <button class="lucen-btn">
+                                    <span>Default Button</span>
+                                </button>
+                                <button class="lucen-btn">
+                                    <i class="bi bi-star"></i>
+                                    <span>Default Button</span>
+                                </button>
+                                <button class="lucen-btn disabled" >
+                                    <span>Default Button</span>
+                                </button>
+                                ' class="code"></code>
+                            </pre>
+                    </div>
+                <!-- Boton Primario -->
+                    <div class="col-md-6">
+                        <h3>Primario</h3>
+                        <button class="lucen-btn lucen-btn-primary">
+                            <span>Primary Button</span>
+                        </button>
+                        <button class="lucen-btn lucen-btn-primary">
+                            <i class="bi bi-star"></i>
+                            <span>Primary Button</span>
+                        </button>
+                        <button class="lucen-btn lucen-btn-primary disabled" >
+                            <span>Primary Button</span>
+                        </button>
+                            <!-- Codigo -->
+                            <pre class="lucen-code-block">
+                                <code data-code='
+                                <button class="lucen-btn lucen-btn-primary">
+                                    <span>Primary Button</span>
+                                </button>
+                                <button class="lucen-btn lucen-btn-primary">
+                                    <i class="bi bi-star"></i>
+                                    <span>Primary Button</span>
+                                </button>
+                                <button class="lucen-btn lucen-btn-primary disabled" >
+                                    <span>Primary Button</span>
+                                </button>
+                                ' class="code"></code>
+                            </pre>
+                    </div>
+                <!-- Boton outline -->
+                    <div class="col-md-6">
+                        <h3>Outline</h3>
+                        <button class="lucen-btn lucen-btn-outline">
+                            <span>Outline Button</span>
+                        </button>
+                        <button class="lucen-btn lucen-btn-outline">
+                            <i class="bi bi-star"></i>
+                            <span>Outline Button</span>
+                        </button>
+                        <button class="lucen-btn lucen-btn-outline disabled" >
+                            <span>Outline Button</span>
+                        </button>
+                            <!-- Codigo -->
+                            <pre class="lucen-code-block">
+                                <code data-code='
+                                <button class="lucen-btn lucen-btn-outline">
+                                    <span>Outline Button</span>
+                                </button>
+                                <button class="lucen-btn lucen-btn-outline">
+                                    <i class="bi bi-star"></i>
+                                    <span>Outline Button</span>
+                                </button>
+                                <button class="lucen-btn lucen-btn-outline disabled" >
+                                    <span>Outline Button</span>
+                                </button>
+                                ' class="code"></code>
+                            </pre>
+                    </div>
+                <!-- Boton Success -->
+                    <div class="col-md-6">
+                        <h3>Success</h3>
+                        <button class="lucen-btn lucen-btn-success">
+                            <span>Success Button</span>
+                        </button>
+                        <button class="lucen-btn lucen-btn-outline-success" >
+                            <i class="bi bi-check2"></i>
+                            <span>Success Button</span>
+                        </button>
+                            <!-- Codigo -->
+                            <pre class="lucen-code-block">
+                                <code data-code='
+                                <button class="lucen-btn lucen-btn-success">
+                                    <span>Success Button</span>
+                                </button>
+                                <button class="lucen-btn lucen-btn-outline-success" >
+                                    <i class="bi bi-check2"></i>
+                                    <span>Success Button</span>
+                                </button>
+                                ' class="code"></code>
+                            </pre>
+                    </div>
+                <!-- Boton Danger -->
+                    <div class="col-md-6">
+                        <h3>Danger</h3>
+                        <button class="lucen-btn lucen-btn-danger">
+                            <span>Danger Button</span>
+                        </button>
+                        <button class="lucen-btn lucen-btn-outline-danger" >
+                            <i class="bi bi-x"></i>
+                            <span>Danger Button</span>
+                        </button>
+                            <!-- Codigo -->
+                            <pre class="lucen-code-block">
+                                <code data-code='
+                                <button class="lucen-btn lucen-btn-danger">
+                                    <span>Danger Button</span>
+                                </button>
+                                <button class="lucen-btn lucen-btn-outline-danger" >
+                                    <i class="bi bi-x"></i>
+                                    <span>Danger Button</span>
+                                </button>
+                                ' class="code"></code>
+                            </pre>
+                    </div>
+                <!-- Boton as iconos -->
+                    <div class="col-md-6">
+                        <h3>Botones de iconos</h3>
+                        <button class="lucen-btn lucen-btn-icon">
+                            <i class="bi bi-gear"></i>
+                        </button>
+                        <button class="lucen-btn lucen-btn-icon lucen-btn-primary">
+                            <i class="bi bi-star"></i>
+                        </button>
+                            <!-- Codigo -->
+                            <pre class="lucen-code-block">
+                                <code data-code='
+                                <button class="lucen-btn lucen-btn-icon">
+                                    <i class="bi bi-gear"></i>
+                                </button>
+                                <button class="lucen-btn lucen-btn-icon lucen-btn-primary">
+                                    <i class="bi bi-star"></i>
+                                </button>
+                                ' class="code"></code>
+                            </pre>
+                    </div>
+            </section>
+        </main>
+</div>
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="js/lucen-ui.js"></script>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+        styeCode();
+    });
+</script>
+    
+</body> 
+</html>

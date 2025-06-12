@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Lucen UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/lucen-ui.css">
+  <style>
+    :root {
+      --footer-height: 48px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      background: url('img/lucen-background.webp') center/cover no-repeat;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      border-radius: var(--lucen-border-radius-lg);
+      box-shadow: var(--lucen-box-shadow-bg);
+      padding: var(--lucen-spacing-xxl);
+      width: 100%;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--lucen-spacing-lg);
+    }
+
+    .login-header {
+      text-align: center;
+    }
+
+    .login-header h2 {
+      margin: 0;
+      font-weight: 600;
+      color: var(--lucen-primary-dark);
+    }
+
+    .login-header p {
+      margin: 0;
+      color: var(--lucen-text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .login-header img {
+      width: 42px;
+      height: 42px;
+    }
+
+    .lucen-form .lucen-btn {
+      margin-top: var(--lucen-spacing-sm);
+    }
+
+    .lucen-form-group:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .login-footer {
+      font-size: 0.8rem;
+      color: var(--lucen-primary-dark);
+      text-align: center;
+    }
+
+    .flex-centered {
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    footer {
+      height: var(--footer-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--lucen-text-tertiary);
+      padding-top: var(--lucen-spacing-sm);
+      background: transparent;
+    }
+  </style>
+</head>
+<body class="lucen-body">
+  <main class="lucen-main flex-centered">
+    <div class="login-container acrylic">
+      <div class="login-header">
+        <div class="row">
+          <div class="col col-sm flex-centered">
+              <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" alt="Logo">
+          </div>
+          <div class="col flex-centered">
+              <h2>Iniciar sesión</h2>
+              <p>Accedé a tu cuenta</p>
+          </div>
+        </div>
+      </div>
+      <form class="lucen-form">
+        <div class="lucen-form-group">
+          <label class="lucen-label" for="email">Correo electrónico</label>
+          <input type="email" id="email" class="lucen-input " placeholder="tucorreo@dominio.com" required>
+        </div>
+        <div class="lucen-form-group">
+          <label class="lucen-label" for="password">Contraseña</label>
+          <input type="password" id="password" class="lucen-input " required>
+        </div>
+        <button type="submit" class="lucen-btn lucen-btn-primary"><span>Ingresar</span></button>
+      </form>
+      
+      <div class="login-footer">
+        ¿No tenés cuenta? <a href="#" class="lucen-text-secondary">Registrate</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    © 2025 Título APP · Desarrollado por SoftCronos · v1.0.0
+  </footer>
+</body>
+</html>
