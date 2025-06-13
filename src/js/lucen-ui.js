@@ -28,6 +28,8 @@ const lucenUI = (function() {
             this.initDropdowns();
             this.initSelects();
             this.initTablePagination();
+            this.initCommandBars();
+            this.initContextualMenu();
         },
         
         /**
@@ -168,6 +170,13 @@ const lucenUI = (function() {
             element.classList.toggle('active');
             const dropdown = element.querySelector('.lucen-menubar-dropdown');
             if (dropdown) dropdown.classList.toggle('show');
+
+            // Detectar si debe abrir hacia arriba
+            if (element.dataset.drop === 'up') {
+                dropdown.classList.add('dropup');
+            } else {
+                dropdown.classList.remove('dropup');
+            }
             
             // Rotar la flecha
             const arrow = element.querySelector('.lucen-menubar-arrow');
@@ -185,7 +194,10 @@ const lucenUI = (function() {
                 if (!except || item !== except) {
                     item.classList.remove('active');
                     const dropdown = item.querySelector('.lucen-menubar-dropdown');
-                    if (dropdown) dropdown.classList.remove('show');
+                    if (dropdown) {
+                        dropdown.classList.remove('show');
+                        dropdown.classList.remove('dropup'); 
+                    }
                     
                     // Restablecer flecha
                     const arrow = item.querySelector('.lucen-menubar-arrow');
@@ -194,6 +206,38 @@ const lucenUI = (function() {
             });
         },
 
+        initContextualMenu: function () {
+            const menu = document.querySelector('.lucen-contextmenu');
+
+            if (!menu) return;
+
+            // Mostrar el menú contextual al hacer click derecho
+            document.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+
+                // Ocultar cualquier otro menú contextual
+                document.querySelectorAll('.lucen-contextmenu.show').forEach(ctx => {
+                    ctx.classList.remove('show');
+                });
+
+                // Posicionar y mostrar el menú
+                menu.style.left = `${e.pageX}px`;
+                menu.style.top = `${e.pageY}px`;
+                menu.classList.add('show');
+            });
+
+            // Ocultar el menú al hacer clic en cualquier otra parte
+            document.addEventListener('click', () => {
+                menu.classList.remove('show');
+            });
+
+            // Ocultar con tecla Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    menu.classList.remove('show');
+                }
+            });
+        },
         /**
          * Inicializa los select personalizados
          */
@@ -509,6 +553,33 @@ const lucenUI = (function() {
                     }
                 });
             });
+        },
+
+        /**
+         * Inicializa las CommandBars con funcionalidad adicional
+         */
+        initCommandBars: function() {
+            // Agregar efecto de hover/active mejorado para touch
+            document.querySelectorAll('.commandbar-horizontal .lucen-btn, .commandbar-vertical .lucen-btn').forEach(btn => {
+                btn.addEventListener('touchstart', function() {
+                    this.classList.add('active');
+                });
+                
+                btn.addEventListener('touchend', function() {
+                    this.classList.remove('active');
+                });
+            });
+            
+            // Inicializar tooltips para commandbars compactas
+            document.querySelectorAll('.commandbar-compact .lucen-btn').forEach(btn => {
+                if (!btn.hasAttribute('data-lucen-tooltip')) {
+                    const span = btn.querySelector('span');
+                    if (span) {
+                        btn.setAttribute('data-lucen-tooltip', span.textContent);
+                    }
+                }
+            });
+            
         },
 
         /**

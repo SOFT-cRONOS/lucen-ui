@@ -1,0 +1,225 @@
+@use 'variables' as *;
+
+// Navbar
+.lucen-navbar {
+  position: sticky;
+  top: 0;
+  width: 60%;
+  z-index: 999;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $lucen-background-primary;
+  border-bottom: 1px solid $lucen-border-color;
+  padding: 0 $lucen-spacing-md;
+  box-shadow: $lucen-shadow-md;
+  margin-left: calc(100vh - 250px);
+  margin-top: 1rem;
+}
+
+.lucen-navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.lucen-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+}
+
+.lucen-navbar-brand {
+  display: flex;
+  align-items: center;
+  color: $lucen-text-primary;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-right: $lucen-spacing-lg;
+
+  i {
+    margin-right: $lucen-spacing-sm;
+    color: $lucen-primary;
+  }
+}
+
+.lucen-navbar-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: $lucen-background-secondary;
+  border-radius: $lucen-border-radius;
+  padding: 6px 12px;
+  color: $lucen-text-secondary;
+  width: 100%;
+  max-width: 400px;
+
+  i {
+    position: absolute;
+    left: $lucen-spacing-sm;
+    color: $lucen-text-tertiary;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: $lucen-text-primary;
+    width: 100%;
+  }
+}
+
+.lucen-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+}
+
+
+// Sidebar
+.lucen-sidebar {
+  width: 250px;
+  background-color: $lucen-background-secondary;
+  border-right: 1px solid $lucen-border-color;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  transition: $lucen-transition;
+  overflow-y: auto;
+  box-shadow: $lucen-shadow-sm;
+
+  &.collapsed {
+    width: 60px;
+
+    .lucen-nav-link span,
+    .lucen-sidebar-header h3,
+    h4 {
+      display: none;
+    }
+
+    .lucen-nav-link {
+      justify-content: center;
+      
+      i {
+        margin-right: 0;
+      }
+    }
+
+    .lucen-nav-submenu {
+      padding: 0;
+    }
+  }
+}
+
+.lucen-sidebar-header {
+  padding: $lucen-spacing-md;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 45px;
+
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
+
+.lucen-sidebar-cat {
+  h4 {
+    text-align: start;
+    margin-left: .5rem;
+    margin-bottom: 0;
+  }
+
+  .lucen-separator {
+    width: 80%;
+    height: 1px;
+    margin: 10px 10px 10px 10px;
+    background: $lucen-background-quaternary;
+  }
+}
+
+.lucen-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lucen-nav-item {
+  margin: $lucen-spacing-xs $lucen-spacing-md;
+}
+
+.lucen-nav-link {
+  display: flex;
+  align-items: center;
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  color: $lucen-text-primary;
+  text-decoration: none;
+  border-radius: $lucen-border-radius;
+  transition: $lucen-transition;
+
+  i {
+    margin-right: $lucen-spacing-sm;
+    color: $lucen-text-secondary;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+  }
+
+  span {
+    flex: 1;
+  }
+
+  &:hover {
+    background-color: $lucen-background-tertiary;
+  }
+
+  &.active {
+    background-color: $lucen-background-tertiary;
+    font-weight: 500;
+    border-left-color: $lucen-primary;
+    border-left-style: solid;
+  }
+}
+
+.lucen-nav-arrow {
+  margin-left: auto;
+  transition: $lucen-transition;
+
+  &.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+}
+
+.lucen-nav-link[aria-expanded="true"] .lucen-nav-arrow {
+  transform: rotate(180deg);
+}
+
+.lucen-nav-submenu {
+  height: 0;
+  overflow: hidden;
+  padding-left: calc($lucen-spacing-md + 20px);
+  margin: 0;
+  transition: height 243ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  list-style: none;
+
+  &.show {
+    padding-top: $lucen-spacing-xs;
+    padding-bottom: $lucen-spacing-xs;
+  }
+
+  .lucen-nav-link {
+    padding: $lucen-spacing-xs $lucen-spacing-md;
+    font-size: 0.9rem;
+  }
+}
+
+.sidebar-collapsed .st-app-main {
+  margin-left: 60px;
+}

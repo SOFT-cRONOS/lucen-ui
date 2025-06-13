@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - CommandBar</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+    
+    <style>
+        .demo-area {
+            padding: 24px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="lucen-body">
+      
+<div class="lucen-container col flex-centered">
+        <!-- Sidebar -->
+        <aside class="lucen-sidebar " id="sidebar">
+            <div class="lucen-sidebar-header">
+                <button class="lucen-btn lucen-btn-icon" id="sidebarCollapse">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h3>Menú</h3>
+            </div>
+            
+            <ul class="lucen-nav">
+                <li class="lucen-nav-item">
+                    <a href="dash.html" class="lucen-nav-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <div class="lucen-sidebar-cat flex-centered">
+                    <h4>Interface</h4>
+                    <div class="lucen-separator"></div>
+                </div>
+                <li class="lucen-nav-item">
+                    <a href="navigation.html" class="lucen-nav-link">
+                        <i class="bi bi-people"></i>
+                        <span>Navigation</span>
+                    </a>
+                </li>
+                <li class="lucen-nav-item">
+                    <a href="#componentssubmenu" data-bs-toggle="collapse" class="lucen-nav-link">
+                        <span>Componentes</span>
+                        <i class="bi bi-chevron-down lucen-nav-arrow"></i>
+                    </a>
+                    <ul class="lucen-nav-submenu collapse" id="componentssubmenu">
+                        <li><a href="acordion.html" class="lucen-nav-link"><i class="bi bi-list-nested"></i> <span>Acordion</span></a></li>
+                        <li><a href="alerts.html" class="lucen-nav-link"><i class="bi bi-exclamation-triangle"></i> <span>Alertas</span></a></li>
+                        <li><a href="buttons.html" class="lucen-nav-link"><i class="bi bi-toggle-on"></i> <span>Botones</span></a></li>
+                        <li><a href="checkbox.html" class="lucen-nav-link"><i class="bi bi-check-square"></i> <span>CheckBox</span></a></li>
+                        <li><a href="commandbar.html" class="lucen-nav-link active"><i class="bi bi-menu-button"></i> <span>CommandBar</span></a></li>
+                        <li><a href="dialog.html" class="lucen-nav-link"><i class="bi bi-chat-left-text"></i> <span>Dialog</span></a></li>
+                        <li><a href="input.html" class="lucen-nav-link"><i class="bi bi-input-cursor-text"></i> <span>Input</span></a></li>
+                        <li><a href="menubar.html" class="lucen-nav-link"><i class="bi bi-menu-button-wide"></i> <span>Menubar</span></a></li>
+                    </ul>
+                </li>
+                <li class="lucen-nav-item">
+                    <a href="#utilitiessubmenu" data-bs-toggle="collapse" class="lucen-nav-link">
+                        <span>Utilities</span>
+                        <i class="bi bi-chevron-down lucen-nav-arrow"></i>
+                    </a>
+                    <ul class="lucen-nav-submenu collapse" id="utilitiessubmenu">
+                        <li><a href="appearance.html" class="lucen-nav-link"><i class="bi bi-palette"></i> <span>Appearance</span></a></li>
+                        <li><a href="classes.html" class="lucen-nav-link"><i class="bi bi-tags"></i> <span>Classes</span></a></li>
+                        <li><a href="colors.html" class="lucen-nav-link"><i class="bi bi-droplet"></i> <span>Colors</span></a></li>
+                        <li><a href="icons.html" class="lucen-nav-link"><i class="bi bi-emoji-sunglasses"></i> <span>Icons</span></a></li>
+                    </ul>
+                </li>
+                <div class="lucen-sidebar-cat flex-centered">
+                    <h4>Web Elements</h4>
+                    <div class="lucen-separator"></div>
+                </div>
+                <li class="lucen-nav-item">
+                    <a href="hero.html" class="lucen-nav-link">
+                        <i class="bi bi-people"></i>
+                        <span>Hero</span>
+                    </a>
+                </li>
+                <li class="lucen-nav-item">
+                    <a href="contactforms.html" class="lucen-nav-link">
+                        <i class="bi bi-file-earmark-text"></i>
+                        <span>Contact Forms</span>
+                    </a>
+                </li>
+                <li class="lucen-nav-item">
+                    <a href="footer.html" class="lucen-nav-link">
+                        <i class="bi bi-file-earmark-text"></i>
+                        <span>Footer</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="lucen-main st-app-main">
+            
+            <!-- Sección de CommandBar -->
+            <section>
+                <h1 class="component-title">CommandBar</h1>
+                <p class="lucen-subtitle">Barra de comandos con acciones contextuales para diferentes dispositivos</p>
+                
+                <!-- CommandBar horizontal estándar (PC) -->
+                <div class="">
+                    <h3>CommandBar Horizontal</h3>
+                    
+                    <div class="commandbar-horizontal">
+                        <button class="lucen-btn">
+                            <i class="bi bi-file-earmark"></i>
+                            <span>Nuevo</span>
+                        </button>
+                        <button class="lucen-btn">
+                            <i class="bi bi-folder"></i>
+                            <span>Abrir</span>
+                        </button>
+                        <button class="lucen-btn">
+                            <i class="bi bi-save"></i>
+                            <span>Guardar</span>
+                        </button>
+                        <div style="flex: 1;"></div>
+                        <button class="lucen-btn">
+                            <i class="bi bi-printer"></i>
+                            <span>Imprimir</span>
+                        </button>
+                        <button class="lucen-btn">
+                            <i class="bi bi-share"></i>
+                            <span>Compartir</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="commandbar-horizontal">
+                            <button class="lucen-btn">
+                                <i class="bi bi-file-earmark"></i>
+                                <span>Nuevo</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-folder"></i>
+                                <span>Abrir</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-save"></i>
+                                <span>Guardar</span>
+                            </button>
+                            <div style="flex: 1;"></div> <!-- Espaciador -->
+                            <button class="lucen-btn">
+                                <i class="bi bi-printer"></i>
+                                <span>Imprimir</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-share"></i>
+                                <span>Compartir</span>
+                            </button>
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- CommandBar vertical (móviles) -->
+                <div class="">
+                    <h3>CommandBar Vertical</h3>
+                    
+                        <div class="commandbar-vertical">
+                            <button class="lucen-btn">
+                                <i class="bi bi-file-earmark"></i>
+                                <span>Nuevo documento</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-folder"></i>
+                                <span>Abrir archivo</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-save"></i>
+                                <span>Guardar cambios</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-printer"></i>
+                                <span>Imprimir documento</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-share"></i>
+                                <span>Compartir con otros</span>
+                            </button>
+                        </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="commandbar-vertical">
+                            <button class="lucen-btn">
+                                <i class="bi bi-file-earmark"></i>
+                                <span>Nuevo documento</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-folder"></i>
+                                <span>Abrir archivo</span>
+                            </button>
+                            <!-- Más botones... -->
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- CommandBar compacta (solo iconos) -->
+                <div class="">
+                    <h3>CommandBar Compacta</h3>
+                
+                        <div class="commandbar-horizontal commandbar-compact">
+                            <a class="lucen-btn lucen-btn-icon" data-lucen-tooltip="Nuevo" data-lucen-placement="bottom">
+                                <i class="bi bi-file-earmark"></i>
+                                <span>Nuevo</span>
+                            </a>
+                            <button class="lucen-btn lucen-btn-icon" data-lucen-tooltip="Abrir" data-lucen-placement="bottom">
+                                <i class="bi bi-folder"></i>
+                                <span>Abrir</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-icon" data-lucen-tooltip="Guardar" data-lucen-placement="bottom">
+                                <i class="bi bi-save"></i>
+                                <span>Guardar</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-icon" data-lucen-tooltip="Deshacer" data-lucen-placement="bottom">
+                                <i class="bi bi-arrow-counterclockwise"></i>
+                                <span>Deshacer</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-icon" data-lucen-tooltip="Rehacer" data-lucen-placement="bottom">
+                                <i class="bi bi-arrow-clockwise"></i>
+                                <span>Rehacer</span>
+                            </button>
+                            <div style="flex: 1;"></div>
+                            <button class="lucen-btn lucen-btn-icon" data-lucen-tooltip="Más opciones" data-lucen-placement="left">
+                                <i class="bi bi-three-dots"></i>
+                                <span>Más</span>
+                            </button>
+                        </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="commandbar-horizontal commandbar-compact">
+                            <button class="lucen-btn lucen-btn-icon" data-lucen-tooltip="Nuevo">
+                                <i class="bi bi-file-earmark"></i>
+                                <span>Nuevo</span>
+                            </button>
+                            <!-- Más botones... -->
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- CommandBar responsive -->
+                <div class="">
+                    <h3>CommandBar Responsive</h3>
+                    
+                    <div class="demo-area">
+                        <div class="commandbar-responsive">
+                            <button class="lucen-btn">
+                                <i class="bi bi-file-earmark"></i>
+                                <span>Nuevo</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-folder"></i>
+                                <span>Abrir</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-save"></i>
+                                <span>Guardar</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-scissors"></i>
+                                <span>Cortar</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-files"></i>
+                                <span>Copiar</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-clipboard"></i>
+                                <span>Pegar</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="commandbar-responsive">
+                            <button class="lucen-btn">
+                                <i class="bi bi-file-earmark"></i>
+                                <span>Nuevo</span>
+                            </button>
+                            <!-- Más botones... -->
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- CommandBar contextual -->
+                <div class="">
+                    <h3>CommandBar Contextual</h3>
+                    
+
+                    <div class="">
+                         <div class="lucen-menubar-item">
+                            <i class="bi bi-three-dots-vertical"></i>
+                            <div class="lucen-menubar-dropdown">
+                                <a href="#" class="lucen-menubar-dropdown-item">
+                                    <i class="bi bi-file-earmark"></i>
+                                    <span>Nuevo</span>
+                                </a>
+                                <a href="#" class="lucen-menubar-dropdown-item">
+                                    <i class="bi bi-folder"></i>
+                                    <span>Abrir</span>
+                                </a>
+                                <a href="#" class="lucen-menubar-dropdown-item">
+                                    <i class="bi bi-save"></i>
+                                    <span>Guardar</span>
+                                </a>
+                                <div class="lucen-menubar-dropdown-divider"></div>
+                                <a href="#" class="lucen-menubar-dropdown-item">
+                                    <i class="bi bi-printer"></i>
+                                    <span>Imprimir</span>
+                                </a>
+                            </div>
+                        </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="lucen-contextmenu lucen-menubar-dropdown" style="position: absolute; display: block;">
+                            <a href="#" class="lucen-menubar-dropdown-item">
+                                <i class="bi bi-file-earmark"></i>
+                                <span>Nuevo</span>
+                            </a>
+                            <!-- mas botones -->
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- CommandBar flotante -->
+                <div class="commandbar-demo">
+                    <h3>CommandBar Flotante</h3>
+                    <p>Barra de comandos que flota sobre el contenido, ideal para acciones principales.</p>
+                    
+                    <div class="" style="min-height: 300px;">
+                        <div class="commandbar-floating commandbar-horizontal acrylic" style="display:;"> 
+                            <!-- commandbar-floating -->
+                            <button class="lucen-btn lucen-btn-primary">
+                                <i class="bi bi-plus-lg"></i>
+                                <span>Nuevo</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-upload"></i>
+                                <span>Importar</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-download"></i>
+                                <span>Exportar</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="commandbar-floating commandbar-horizontal">
+                            <button class="lucen-btn lucen-btn-primary">
+                                <i class="bi bi-plus-lg"></i>
+                                <span>Nuevo</span>
+                            </button>
+                            <!-- Más botones... -->
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+            </section>
+        </main>
+</div>
+
+
+    <!-- Menu Contextual -->
+    <!-- <div class="lucen-contextmenu lucen-menubar-dropdown" style="position: absolute; display: block;">
+        <a href="#" class="lucen-menubar-dropdown-item">
+            <i class="bi bi-file-earmark"></i>
+            <span>Nuevo</span>
+        </a>
+        <a href="#" class="lucen-menubar-dropdown-item">
+            <i class="bi bi-folder"></i>
+            <span>Abrir</span>
+        </a>
+        <a href="#" class="lucen-menubar-dropdown-item">
+            <i class="bi bi-save"></i>
+            <span>Guardar</span>
+        </a>
+        <div class="lucen-menubar-dropdown-divider"></div>
+        <a href="#" class="lucen-menubar-dropdown-item">
+            <i class="bi bi-printer"></i>
+            <span>Imprimir</span>
+        </a>
+    </div> -->
+
+    <!-- Botón flotante -->
+    <button class="lucen-btn lucen-btn-icon lucen-btn-primary floating-btn">
+        <div class="lucen-menubar-item" data-drop="up">
+            <i class="bi bi-three-dots-vertical text-light"></i>
+            <div class="lucen-menubar-dropdown left-expand">
+                <a href="#" class="lucen-menubar-dropdown-item">
+                    <i class="bi bi-file-earmark"></i>
+                    <span>Nuevo</span>
+                </a>
+                <a href="#" class="lucen-menubar-dropdown-item">
+                    <i class="bi bi-folder"></i>
+                    <span>Abrir</span>
+                </a>
+                <a href="#" class="lucen-menubar-dropdown-item">
+                    <i class="bi bi-save"></i>
+                    <span>Guardar</span>
+                </a>
+                <div class="lucen-menubar-dropdown-divider"></div>
+                <a href="#" class="lucen-menubar-dropdown-item">
+                    <i class="bi bi-printer"></i>
+                    <span>Imprimir</span>
+                </a>
+            </div>
+        </div>
+    </button>
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+
+<script>
+    // Inicialización de componentes
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+        styeCode();
+        
+        // Inicializar tooltips para la commandbar compacta
+        lucenUI.initTooltips();
+        
+        // Optimización para touch
+        // if ('ontouchstart' in window || navigator.maxTouchPoints) {
+        //     document.querySelectorAll('.commandbar-horizontal .lucen-btn').forEach(btn => {
+        //         btn.style.padding = 'var(--lucen-spacing-md) var(--lucen-spacing-lg)';
+        //         btn.style.minHeight = '48px';
+        //     });
+        // }
+    });
+    
+</script>
+    
+</body> 
+</html>

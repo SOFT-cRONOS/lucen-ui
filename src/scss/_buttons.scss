@@ -155,3 +155,23 @@
     color: $lucen-text-white;
   }
 }
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  transition: $lucen-transition;
+  z-index: 1000;
+  box-shadow: $lucen-box-shadow-float;
+
+  // i {
+  //   font-size: 1.5rem;
+  // }
+
+  .lucen-menubar-dropdown {
+    margin: .3rem;
+  }
+}

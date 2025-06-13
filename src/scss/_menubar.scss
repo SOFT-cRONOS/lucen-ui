@@ -1,0 +1,155 @@
+@use 'variables' as *;
+
+/* Drops down */
+.lucen-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: $lucen-background-primary;
+  box-shadow: $lucen-shadow-md;
+  border-radius: $lucen-border-radius;
+  display: none;
+  flex-direction: column;
+  min-width: 160px;
+  overflow: hidden;
+
+  a {
+    padding: $lucen-spacing-sm $lucen-spacing-md;
+    text-decoration: none;
+    color: $lucen-text-primary;
+    display: block;
+
+    &:hover {
+      background: $lucen-background-secondary;
+    }
+  }
+}
+
+.lucen-menubar {
+  display: flex;
+  align-items: center;
+  background-color: $lucen-background-primary;
+  border-radius: $lucen-border-radius;
+  box-shadow: $lucen-shadow-sm;
+  padding: 0 $lucen-spacing-sm;
+  height: 48px;
+}
+
+.lucen-menubar-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 $lucen-spacing-md;
+  cursor: pointer;
+  color: $lucen-text-primary;
+  transition: $lucen-transition;
+  user-select: none;
+
+  // &:hover {
+  //   background-color: $lucen-background-secondary;
+  // }
+
+  // &.active {
+  //   background-color: $lucen-background-tertiary;
+  // }
+}
+
+.lucen-menubar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $lucen-background-primary;
+  border-radius: $lucen-border-radius;
+  box-shadow: $lucen-shadow-md;
+  min-width: 220px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.2s ease,
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  padding: 0;
+  border: 1px solid transparent;
+  opacity: 0;
+  transform: translateY(-5px);
+
+  &.show {
+    max-height: 500px; /* Adjust based on your content */
+    opacity: 1;
+    transform: translateY(0);
+    padding: $lucen-spacing-sm 0;
+    border-color: $lucen-border-color;
+  }
+}
+
+.left-expand {
+  right: 0!important; /* 👈 esto hará que se alinee con el borde derecho del botón */
+  left: auto!important; /* 👈 anulamos el left para evitar conflictos */
+}
+
+
+.lucen-menubar-dropdown.dropup {
+    top: auto;
+    bottom: 100%;
+    transform-origin: bottom;
+}
+
+.lucen-menubar-dropdown-item {
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+  color: $lucen-text-primary;
+  text-decoration: none;
+  transition: $lucen-transition;
+
+  &:hover {
+     background-color: $lucen-background-secondary;
+   }
+
+  i {
+    width: 20px;
+    text-align: center;
+  }
+}
+
+.lucen-menubar-dropdown-divider {
+  height: 1px;
+  background-color: $lucen-border-color;
+  margin: $lucen-spacing-xs 0;
+}
+
+.lucen-menubar-arrow {
+  margin-left: $lucen-spacing-sm;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lucen-menubar-item.active .lucen-menubar-arrow {
+  transform: rotate(180deg);
+}
+
+.lucen-menubar-user {
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  border-radius: $lucen-border-radius;
+  transition: $lucen-transition;
+
+  &:hover {
+    background-color: $lucen-background-secondary;
+  }
+}
+
+.lucen-menubar-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: $lucen-primary;
+  color: $lucen-text-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+}

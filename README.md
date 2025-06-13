@@ -84,6 +84,13 @@ sass --watch src/scss/lucen-ui.scss:dist/lucen-ui.css
 ```
 
 `Nota: Si hace falta instalar nodejs npm luego sudo npm install -g sass`
+
+Para comprimir el js usar
+```
+uglifyjs src/js/lucen-ui.js -o dist/lucen-ui.min.js -c -m
+```
+`Nota: Si hace falta instalar npm install -g uglify-js`
+
 # License
 This project is licensed under the GNU GPL v3.0 — see the LICENSE file for details.
 © [SoftCronos](https://softcronos.com.ar)

@@ -1,0 +1,100 @@
+@use 'variables' as *;
+
+/* Layout */
+.lucen-body {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  /* background-color: var(--lucen-background-secondary); */
+  color: $lucen-text-primary;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.lucen-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  transition: $lucen-transition;
+}
+
+.full-display {
+  min-height: 100vh;
+}
+
+.lucen-main {
+  display: flex;
+  flex: 1;
+  padding: $lucen-spacing-lg;
+  /* margin-left: 250px; */
+  transition: $lucen-transition;
+  background-color: $lucen-background-primary;
+}
+
+.st-app-main {
+  margin-left: 250px;
+  padding: 0 20px 0 35px;
+  transition: $lucen-transition;
+
+
+    section{
+        width: 100%;
+    }
+}
+
+//filas y columnas
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-sm {
+  width: 30%;
+}
+
+.col-md {
+  width: 50%;
+}
+
+.col-md-6 {
+  width: 60%;
+}
+
+.col-lg {
+  width: 100%;
+}
+
+//margenes
+.mt-3 { margin-top: $lucen-spacing-md; }
+
+// Utilidades
+.lucen-bg-primary { background-color: $lucen-primary; }
+.lucen-bg-success { background-color: $lucen-success; }
+.lucen-bg-danger { background-color: $lucen-danger; }
+.lucen-bg-warning { background-color: $lucen-warning; }
+.lucen-bg-info { background-color: $lucen-info; }
+
+.lucen-text-primary { color: $lucen-text-primary; }
+.lucen-text-secondary { color: $lucen-text-secondary; }
+.lucen-text-white { color: $lucen-text-white; }
+.lucen-text-light {
+  color: $lucen-text-white;
+}
+
+.transparent {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+
+.acrylic {
+  backdrop-filter: blur(10px)!important;
+  -webkit-backdrop-filter: blur(10px)!important; /* Soporte para Safari */
+  background-color: rgba($lucen-background-primary, 0.8)!important;
+}

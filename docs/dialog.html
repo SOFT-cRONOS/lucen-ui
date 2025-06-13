@@ -11,132 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
 
     <!-- lucen UI CSS -->
-    <link rel="stylesheet" href="css/lucen-ui.css">
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
     
     <style>
-        /* Estilos adicionales específicos para diálogos */
-        .dialog-examples {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: var(--lucen-spacing-lg);
-            margin-top: var(--lucen-spacing-lg);
-        }
-        
-        .dialog-demo-card {
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .dialog-demo-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--lucen-shadow-md);
-        }
-        
-        .dialog-preview {
-            background-color: var(--lucen-background-secondary);
-            border-radius: var(--lucen-border-radius-lg);
-            padding: var(--lucen-spacing-lg);
-            margin-bottom: var(--lucen-spacing-md);
-            position: relative;
-            overflow: hidden;
-            height: 150px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        /* Modales de ejemplo */
-        .form-modal-content {
-            display: flex;
-            flex-direction: column;
-            gap: var(--lucen-spacing-md);
-        }
-        
-        .data-grid {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .data-grid th, .data-grid td {
-            padding: var(--lucen-spacing-sm);
-            border-bottom: 1px solid var(--lucen-border-color);
-            text-align: left;
-        }
-        
-        .data-grid th {
-            background-color: var(--lucen-background-secondary);
-            font-weight: 600;
-        }
-        
-        .data-grid tr:hover {
-            background-color: var(--lucen-background-secondary);
-        }
-        
-        /* Efecto acrílico para modales */
-        .acrylic-modal .lucen-modal-dialog {
-            background-color: rgba(var(--lucen-background-primary-rgb), 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(var(--lucen-background-primary-rgb), 0.2);
-        }
-        
-        /* Modal fullscreen */
-        .fullscreen-modal .lucen-modal-dialog {
-            width: 100%;
-            height: 100%;
-            max-width: none;
-            max-height: none;
-            border-radius: 0;
-        }
-        
-        /* Modal con scroll */
-        .scrollable-modal .lucen-modal-body {
-            max-height: 60vh;
-            overflow-y: auto;
-        }
-        
-        /* Modal dividido */
-        .split-modal .lucen-modal-body {
-            display: flex;
-            gap: var(--lucen-spacing-lg);
-        }
-        
-        .split-modal .split-left {
-            flex: 1;
-        }
-        
-        .split-modal .split-right {
-            flex: 1;
-            border-left: 1px solid var(--lucen-border-color);
-            padding-left: var(--lucen-spacing-lg);
-        }
-        
-        /* Modal de confirmación */
-        .confirmation-modal .lucen-modal-body {
-            text-align: center;
-            padding: var(--lucen-spacing-xl);
-        }
-        
-        .confirmation-modal .lucen-modal-footer {
-            justify-content: center;
-        }
-        
-        /* Touch optimizations */
-        @media (pointer: coarse) {
-            .lucen-modal-dialog {
-                width: 90% !important;
-                max-width: 90% !important;
-            }
-            
-            .lucen-btn {
-                padding: var(--lucen-spacing-md) var(--lucen-spacing-lg);
-                min-height: 48px;
-            }
-            
-            .lucen-modal-footer .lucen-btn {
-                flex: 1;
-            }
-        }
+
     </style>
 </head>
 <body class="lucen-body">
@@ -785,7 +663,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
 
 <!-- lucen UI JS -->
-<script src="js/lucen-ui.js"></script>
+<script src="../dist/lucen-ui.min.js"></script>
 
 <script>
     // Inicialización de componentes
