@@ -282,16 +282,16 @@
                     </div>
                 </div>
                 <div class="cards-grid">
-                    <div class="lucen-card card-dynamic" img="https://fastly.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I">
-                        <div class="lucen-card-body card-dynamic-content text-light">
+                    <div class="lucen-card card-dynamic gradient-primary" img="https://fastly.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I">
+                        <div class="lucen-card-body card-dynamic-content  text-light">
                             <h3 class="lucen-title">Título dinámico</h3>
                             <p class="">Texto legible sobre el gradiente.</p>
-                            <button class="lucen-btn lucen-btn-primary">Acción</button>
+                            <button class="lucen-btn lucen-btn-outline">Acción</button>
                         </div>
                     </div>
                     
                     <div class="lucen-card card-dynamic" img="https://fastly.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I">
-                        <div class="lucen-card-body card-dynamic-content text-light blured-content">
+                        <div class="lucen-card-body card-dynamic-content blured-content acrylic-md">
                             <h3 class="lucen-title">Título dinámico</h3>
                             <p class="">Texto legible sobre el gradiente.</p>
                             <button class="lucen-btn lucen-btn-primary">Acción</button>
@@ -527,7 +527,7 @@
     document.querySelectorAll('.card-dynamic').forEach(card => {
         const imgUrl = card.getAttribute('img');
         if (imgUrl) {
-            card.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('${imgUrl}')`;
+            card.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('${imgUrl}')`;
             card.style.backgroundSize = 'cover';
             card.style.backgroundPosition = 'center';
         }

@@ -105,6 +105,23 @@
   color: $lucen-text-white;
 }
 
+.gradient-primary {
+    &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to top, 
+      rgba($lucen-primary-dark, 0.8) 0%, 
+      rgba($lucen-primary-dark, 0.3) 70%
+    );
+    z-index: 0;
+  }
+}
+
 .transparent {
   background: transparent !important;
   background-color: transparent !important;
@@ -117,4 +134,12 @@
   backdrop-filter: blur(10px)!important;
   -webkit-backdrop-filter: blur(10px)!important; /* Soporte para Safari */
   background-color: rgba($lucen-background-primary, 0.8)!important;
+
+  &-md {
+    background-color: rgba($lucen-background-primary, 0.5)!important;
+  }
+
+    &-sf {
+    background-color: rgba($lucen-background-primary, 0.3)!important;
+  }
 }
