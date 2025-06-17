@@ -41,6 +41,26 @@
     }
 }
 
+//contenedor flotante centrado arriba
+.floating-container-top {
+    position: fixed;
+    display:flex;
+    justify-content: center;
+    top: $lucen-spacing-lg;
+    right: 0;
+    margin: 0 auto;
+    width: calc(100% - 250px); /* Resta el ancho del sidebar y el padding */
+    z-index: 1000;
+    transition: $lucen-transition;
+}
+
+/* Cuando el sidebar está contraído (60px) */
+.sidebar-collapsed .floating-container-top {
+    width: calc(100% - 60px);
+    transition: $lucen-transition;
+}
+
+
 //filas y columnas
 .row {
   display: flex;
@@ -72,7 +92,7 @@
 .mt-3 { margin-top: $lucen-spacing-md; }
 
 // Utilidades
-.lucen-bg-primary { background-color: $lucen-primary; }
+.lucen-bg-primary { background: linear-gradient(to bottom right, $lucen-primary, $lucen-primary-light)!important;}
 .lucen-bg-success { background-color: $lucen-success; }
 .lucen-bg-danger { background-color: $lucen-danger; }
 .lucen-bg-warning { background-color: $lucen-warning; }

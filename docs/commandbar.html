@@ -107,7 +107,7 @@
         <main class="lucen-main st-app-main">
             
             <!-- Sección de CommandBar -->
-            <section>
+            <section class="commandbar-floating-site">
                 <h1 class="component-title">CommandBar</h1>
                 <p class="lucen-subtitle">Barra de comandos con acciones contextuales para diferentes dispositivos</p>
                 
@@ -311,7 +311,6 @@
                 <div class="">
                     <h3>CommandBar Contextual</h3>
                     
-
                     <div class="">
                          <div class="lucen-menubar-item">
                             <i class="bi bi-three-dots-vertical"></i>
@@ -353,11 +352,18 @@
                 <!-- CommandBar flotante -->
                 <div class="commandbar-demo">
                     <h3>CommandBar Flotante</h3>
-                    <p>Barra de comandos que flota sobre el contenido, ideal para acciones principales.</p>
+                    <p>Barra de comandos que flota sobre el contenido, ideal para acciones principales. Solo para pantallas mayores a 760px. Para moviles usar boton flotante u otra alternativa</p>
                     
-                    <div class="" style="min-height: 300px;">
-                        <div class="commandbar-floating commandbar-horizontal acrylic" style="display:;"> 
+                    <div class="">
+                        <div class="floating-container-top">
+                        <div class="commandbar-floating commandbar-horizontal acrylic"> 
                             <!-- commandbar-floating -->
+                            <div class="lucen-form-group">
+                                <div class="input-with-icon">
+                                    <i class="bi bi-search right"></i>
+                                    <input type="text" class="lucen-input right-icon" id="right-icon-input" placeholder="Buscar...">
+                                </div>
+                            </div>
                             <button class="lucen-btn lucen-btn-primary">
                                 <i class="bi bi-plus-lg"></i>
                                 <span>Nuevo</span>
@@ -371,6 +377,8 @@
                                 <span>Exportar</span>
                             </button>
                         </div>
+                        </div>
+
                     </div>
                     
                     <!-- Código -->

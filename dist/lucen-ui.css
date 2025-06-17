@@ -516,12 +516,60 @@
   margin: 0.3rem;
 }
 
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+  grid-auto-rows: 1fr;
+}
+
+.cards-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 11px;
+  padding-bottom: 11px;
+  scrollbar-width: thin;
+}
+
+.cards-slider .lucen-card {
+  min-width: 280px;
+  flex-shrink: 0;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 11px;
+  background: linear-gradient(to bottom right, #0163bf, #4b9eec);
+  -webkit-background-clip: text; /* Corta el fondo según el texto */
+  background-clip: text;
+  color: transparent; /* Hacemos el color del texto transparente para que se vea el gradiente */
+  display: inline-block; /* Necesario para que funcione */
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 11px;
+}
+
+.card-stats .stat {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.875rem;
+  color: #605e5c;
+}
+
 .lucen-card {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
   transition: all 0.2s ease;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .lucen-card:hover {
   box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
@@ -530,33 +578,103 @@
 
 .lucen-card-header {
   padding: 11px;
-  border-bottom: 1px solid #e6e5e5;
+  padding-bottom: 0;
   font-weight: 600;
   font-size: 1.1rem;
 }
 .lucen-card-header-image {
   padding: 0;
   border-bottom: none;
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
 }
 .lucen-card-header-image img {
   width: 100%;
-  height: auto;
+  height: 200px;
   display: block;
+}
+.lucen-card-header-image.md-image {
+  max-height: 160px;
+  overflow: hidden;
+}
+.lucen-card-header-image.sm-image {
+  max-height: 120px;
+  overflow: hidden;
 }
 
 .lucen-card-body {
-  padding: 11px;
+  padding: 0 11px;
+  flex-grow: 1;
+}
+.lucen-card-body p {
+  margin: 0.5rem 0;
+}
+.lucen-card-body .lucen-title {
+  margin-top: 0.7rem;
 }
 
 .lucen-card-footer {
-  padding: 11px;
-  border-top: 1px solid #e6e5e5;
-  background-color: #f3f2f1;
+  padding: 0 11px 11px 11px;
+  color: #605e5c;
+  font-size: 0.9rem;
 }
 
 .lucen-card-primary .lucen-card-header {
   background-color: #0163bf;
   color: #ffffff;
+}
+
+.card-bordered {
+  position: relative;
+  overflow: hidden; /* Para asegurar que los bordes redondeados del pseudo-elemento se vean correctamente */
+}
+
+.card-bordered::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: 2px;
+  background: linear-gradient(to bottom right, #0163bf, #4b9eec);
+  border-radius: 2px;
+}
+
+.card-dynamic {
+  position: relative;
+  min-height: 300px;
+}
+.card-dynamic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(3, 70, 122, 0.5) 0%, rgba(3, 70, 122, 0.1) 50%);
+  z-index: 0;
+}
+.card-dynamic .card-dynamic-content {
+  z-index: 1;
+  margin-top: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.card-dynamic .lucen-btn-white {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #ffffff;
+  backdrop-filter: blur(5px);
+}
+
+.blured-content {
+  backdrop-filter: blur(5px) !important;
+  opacity: 0;
+}
+.blured-content:hover {
+  opacity: 100%;
 }
 
 .lucen-checkbox {
@@ -764,7 +882,6 @@
   min-width: 40px;
   justify-content: center;
 }
-
 .commandbar-compact .lucen-btn span {
   display: none;
 }
@@ -776,12 +893,12 @@
   width: 100%;
   flex-wrap: wrap;
 }
-
 @media (max-width: 800px) {
   .commandbar-responsive span {
     display: none;
   }
 }
+
 /* CommandBar contextual */
 .commandbar-contextual {
   background-color: #4b9eec;
@@ -790,20 +907,25 @@
 }
 
 /* CommandBar flotante */
+.commandbar-floating-site {
+  margin-top: 80px;
+}
+
 .commandbar-floating {
-  position: fixed;
-  bottom: 24px;
-  left: 50vh;
   padding: 1rem;
-  max-width: 400px;
-  width: 80%;
-  z-index: 1000;
+  width: fit-content;
   box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
   border-radius: 8px;
 }
 
 /* Adaptaciones para móviles */
 @media (max-width: 768px) {
+  .commandbar-floating-site {
+    margin-top: 0px;
+  }
+  .commandbar-floating {
+    display: none;
+  }
   .commandbar-horizontal {
     flex-direction: column;
     overflow-x: visible;
@@ -970,6 +1092,24 @@
   width: 100%;
 }
 
+.floating-container-top {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 24px;
+  right: 0;
+  margin: 0 auto;
+  width: calc(100% - 250px); /* Resta el ancho del sidebar y el padding */
+  z-index: 1000;
+  transition: all 0.2s ease;
+}
+
+/* Cuando el sidebar está contraído (60px) */
+.sidebar-collapsed .floating-container-top {
+  width: calc(100% - 60px);
+  transition: all 0.2s ease;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -1001,7 +1141,7 @@
 }
 
 .lucen-bg-primary {
-  background-color: #0163bf;
+  background: linear-gradient(to bottom right, #0163bf, #4b9eec) !important;
 }
 
 .lucen-bg-success {
@@ -1808,6 +1948,9 @@
 }
 
 .text-light {
+  color: #ffffff !important;
+}
+.text-light h1, .text-light h2, .text-light h3, .text-light h4, .text-light h5, .text-light h6, .text-light p, .text-light i, .text-light a, .text-light span {
   color: #ffffff !important;
 }
 
