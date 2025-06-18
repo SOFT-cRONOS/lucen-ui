@@ -611,7 +611,7 @@
   margin: 0.5rem 0;
 }
 .lucen-card-body .lucen-title {
-  margin-top: 0.7rem;
+  margin-top: 0;
 }
 
 .lucen-card-footer {
@@ -623,6 +623,9 @@
 .lucen-card-primary .lucen-card-header {
   background-color: #0163bf;
   color: #ffffff;
+}
+.lucen-card-primary .lucen-card-header .lucen-title {
+  margin-top: 0;
 }
 
 .card-bordered {
@@ -665,6 +668,34 @@
 }
 .blured-content:hover {
   opacity: 100%;
+}
+
+/* Clase para la columna de imagen/icono */
+.lucen-card-media {
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 11px;
+  overflow: hidden;
+}
+.lucen-card-media i {
+  max-width: 80px;
+}
+.lucen-card-media img {
+  height: 100%;
+  object-fit: cover;
+}
+.lucen-card-media i {
+  font-size: 3.5rem;
+  color: #4b9eec;
+}
+
+.notification-card .lucen-card-media i {
+  font-size: 1.2rem;
+}
+.notification-card .lucen-card-body p, .notification-card .lucen-card-body h4 {
+  margin: 0;
 }
 
 .lucen-checkbox {
@@ -1126,8 +1157,40 @@
   width: 100%;
 }
 
+.flex-centered {
+  justify-content: center;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
 .mt-3 {
   margin-top: 11px;
+}
+
+.me-1 {
+  margin-right: 11px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
 }
 
 .lucen-bg-primary {
@@ -1961,8 +2024,24 @@
   color: #ffffff !important;
 }
 
+.big {
+  font-size: 1.8rem !important;
+}
+
+.medium {
+  font-size: 1.5rem !important;
+}
+
+.normal {
+  font-size: 1.3rem !important;
+}
+
 .small {
-  font-size: 0.875em;
+  font-size: 0.875rem !important;
+}
+
+.micro {
+  font-size: 0.775rem !important;
 }
 
 .text-muted {

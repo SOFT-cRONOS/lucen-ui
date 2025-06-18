@@ -102,9 +102,9 @@
     margin: 0.5rem 0;
   }
 
-  .lucen-title{
-    margin-top: 0.7rem;
-  }
+   .lucen-title{
+     margin-top:0;
+   }
 }
 
 .lucen-card-footer {
@@ -117,6 +117,10 @@
 .lucen-card-primary .lucen-card-header {
   background-color: $lucen-primary;
   color: $lucen-text-white;
+
+  & .lucen-title{
+     margin-top:0;
+   }
 }
 
 .card-bordered {
@@ -170,3 +174,41 @@
   }
 }
 
+
+/* Clase para la columna de imagen/icono */
+.lucen-card-media {
+    
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 $lucen-spacing-md;
+    overflow: hidden;
+
+    & i {
+      max-width: 80px;
+    }
+
+    & img {
+      height: 100%;
+      object-fit: cover
+    }
+
+    & i {
+      font-size: 3.5rem;
+      color: $lucen-primary-light;
+    }
+
+}
+
+.notification-card {
+
+  & .lucen-card-media i {
+    font-size: 1.2rem;
+  }
+  
+  & .lucen-card-body p, & .lucen-card-body h4 {
+    margin:0;
+  }
+
+}
